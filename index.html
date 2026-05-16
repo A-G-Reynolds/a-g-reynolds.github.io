@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!-- last updated 05/03/2026 -->
+<html>
+    <head>
+        <title>About Me</title>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styleSheet/AGReynolds_styles6.css">
+        <script src="scripts/AGReynolds_scripts6.js" defer></script>
+        <script src="scripts/x_solver.js" defer></script>
+        <script src="scripts/factoringEq.js" defer></script>
+        <script src="scripts/combo.js" defer></script>
+    </head>
+<body>
+
+    <header class="banner">
+        <img src="images/banner.PNG" class="signature">
+    </header>
+
+    <section id="about" class="section">
+        <h1>About.</h1>
+        <img src="images/profile2.jpg" alt="A G Reynolds, 2026" class="profile-img">
+        <p>
+            My name is <b>Ashley Grace</b>. <br>I am a student studying computer science at <b>East Central University.</b>
+            <br />My technical expertise includes developing in <b>C, Python, and HTML/CSS.</b> I love to see code come to life!
+        </p>
+        <p class="quote">I believe in clean, functional code that reflects the <b><i>quality and sustainability</i></b> that allows us all to thrive!
+        </p>
+    </section>
+
+    <div class="banner nav_banner">
+        <img src="images/NoBackInitial.PNG" alt="Initial Logo" class="initial">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#hobbies">Interests</a></li>
+                <li><a href="#functions">Calculations</a></li>
+                <li><a href="#contact" style="font-size: 18px; color: #40c936;">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <h1>Current Courses (Spring '26)</h1>
+
+    <section id="education" class="container">
+        <div class="courses">
+            <h2>Data Structures (CPSMA-2103-01)</h2>
+            <p class="course_descript">This course explores the design, implementation, and analysis of data structures. Understanding the logical and physical representation of data and algorithmic efficiency is strongly emphasized. Students are taught to evaluate trade-offs among different implementations for the appropriate selection of structures when solving computational problems.</p>
+        </div>
+
+        <div class="courses">
+            <h2>Business Calculus (MATH-2613-01)</h2>
+            <p class="course_descript">This course covers concepts of differential and integral calculus viewed through a lens for direct application in business, life, and social sciences. Topics include rates of change, optimization, marginal analysis, growth and decay modes, and area accumulation.</p>
+        </div>
+
+        <div class="right">
+            <img src="images/ECU.jpg" alt="ECU Campus" class="campus_img">
+            <p class="caption">Ada, Oklahoma</p>
+        </div>
+
+        <div class="courses full_row">
+            <h2>Object Oriented Programming (CMPSC-3543-01)</h2>
+            <p class="course_descript">This course introduces the central concepts of OOP, such as classes, objects, inheritance, polymorphism, encapsulation, and abstraction, with emphasis on reusability, modularity, and maintenance. Students explore the use of constructors, destructors, and method overriding through hands-on projects.</p>
+        </div>
+
+        <div class="course-row full_row">
+            <h2>Internet Programming (CMPSC-3323-01)</h2>
+            <p class="course_descript">This course introduces the principles and technologies that comprise the modern internet, and drive web application development. There is a brief review of the history leading up to the development and use of markup languages, and styling frameworks. Then, client/server side development is studied thoroughly, giving students the <b>know how</b>, as well as <b>know why.</b></p>
+        </div>
+    </section>
+
+    <section>
+        <p>Learn more about East Central University on the <a href="https://www.ecok.edu">ECU Homepage!</a></p>
+        <img src="images/ECU-Logo.PNG" alt="ECU Logo" class="logo">
+    </section>
+
+    <div class="banner">
+        <h1>Calculations.</h1>
+    </div>
+
+    <section id="functions" class="funct_grid">
+        <p class="caption" style="font-size: 37px;">A Small Collection of Interactive Programs</p>
+        <p>Each calculator is powered by a custom parsing engine built entirely from scratch. Crack the Combination demonstrates the transition of low-level logic into a dynamic environment. Each interactive unit operates independently, showcasing algorithm implementation without the use of external libraries. Feel free to explore! Just press play, or drop in some digits!</p>
+        <img src="images/JSlogo.png" alt="JavaScript Logo" class="logo">
+
+        <!-- BOOTH 01: CALCULATOR -->
+        <div class="booth">
+            <span class="tag">01</span>
+            <h2>Calculator</h2>
+            <p>Standard Operations</p>
+            <button class="play" id="calc_play"
+                onclick="document.getElementById('calc_panel').style.display='flex';
+                    this.style.display='none';
+                    document.getElementById('calc_reset').style.display='block';">
+                Expand
+            </button>
+            <button class="play" id="calc_reset" style="display:none;"
+                onclick="document.getElementById('calc_panel').style.display='none';
+                    this.style.display='none';
+                    document.getElementById('calc_play').style.display='block';
+                    calculator.clear();">
+                Collapse
+            </button>
+            <div class="panel" id="calc_panel">
+                <div class="calc_display" id="calc_display">0</div>
+                <div class="calc_grid">
+                    <button class="calc_btn opr" onclick="calculator.square()">x<sup>2</sup></button>
+                    <button class="calc_btn opr" onclick="calculator.percent()">%</button>
+                    <button class="calc_btn opr clr" onclick="calculator.clear()">C</button>
+                    <button class="calc_btn opr" onclick="calculator.pressOpr('+')">+</button>
+
+                    <button class="calc_btn" onclick="calculator.pressNum('7')">7</button>
+                    <button class="calc_btn" onclick="calculator.pressNum('8')">8</button>
+                    <button class="calc_btn" onclick="calculator.pressNum('9')">9</button>
+                    <button class="calc_btn opr" onclick="calculator.pressOpr('/')">&divide;</button>
+
+                    <button class="calc_btn" onclick="calculator.pressNum('4')">4</button>
+                    <button class="calc_btn" onclick="calculator.pressNum('5')">5</button>
+                    <button class="calc_btn" onclick="calculator.pressNum('6')">6</button>
+                    <button class="calc_btn opr" onclick="calculator.pressOpr('*')">&times;</button>
+
+                    <button class="calc_btn" onclick="calculator.pressNum('1')">1</button>
+                    <button class="calc_btn" onclick="calculator.pressNum('2')">2</button>
+                    <button class="calc_btn" onclick="calculator.pressNum('3')">3</button>
+                    <button class="calc_btn opr" onclick="calculator.pressOpr('-')">-</button>
+
+                    <button class="calc_btn" onclick="calculator.toggle()">+/-</button>
+                    <button class="calc_btn" onclick="calculator.pressNum('0')">0</button>
+                    <button class="calc_btn" onclick="calculator.pressNum('.')">.</button>
+                    <button class="calc_btn calc_equals" onclick="calculator.equals(false)">=</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOOTH 02: SOLVE FOR X -->
+        <div class="booth">
+            <span class="tag">02</span>
+            <h2>Solve for X</h2>
+            <p>Linear, Quadratic, and Complex Equations</p>
+            <button class="play" id="solver_play"
+                onclick="document.getElementById('solver_panel').style.display='flex';
+                    this.style.display='none';
+                    document.getElementById('solver_reset').style.display='block';">
+                Expand
+            </button>
+            <button class="play" id="solver_reset" style="display:none;"
+                onclick="document.getElementById('solver_panel').style.display='none';
+                    this.style.display='none';
+                    document.getElementById('solver_play').style.display='block';
+                    solver.clear();">
+                Collapse
+            </button>
+            <div class="panel" id="solver_panel">
+                <input type="hidden" id="solver_input">
+                <div class="calc_display" id="solver_display">0</div>
+                <div class="calc_grid">
+                    <button class="calc_btn opr" onclick="solver.pressX()">x</button>
+                    <button class="calc_btn opr" onclick="solver.pressSquare()">x<sup>2</sup></button>
+                    <button class="calc_btn opr" onclick="solver.pressOpnCls('(')">(</button>
+                    <button class="calc_btn opr" onclick="solver.pressOpnCls(')')">)</button>
+
+                    <button class="calc_btn" onclick="solver.pressNum('7')">7</button>
+                    <button class="calc_btn" onclick="solver.pressNum('8')">8</button>
+                    <button class="calc_btn" onclick="solver.pressNum('9')">9</button>
+                    <button class="calc_btn opr" onclick="solver.pressOpr('/')">&divide;</button>
+
+                    <button class="calc_btn" onclick="solver.pressNum('4')">4</button>
+                    <button class="calc_btn" onclick="solver.pressNum('5')">5</button>
+                    <button class="calc_btn" onclick="solver.pressNum('6')">6</button>
+                    <button class="calc_btn opr" onclick="solver.pressOpr('*')">&times;</button>
+
+                    <button class="calc_btn" onclick="solver.pressNum('1')">1</button>
+                    <button class="calc_btn" onclick="solver.pressNum('2')">2</button>
+                    <button class="calc_btn" onclick="solver.pressNum('3')">3</button>
+                    <button class="calc_btn opr" onclick="solver.pressOpr('-')">-</button>
+
+                    <button class="calc_btn zero" onclick="solver.pressNum('0')">0</button>
+                    <button class="calc_btn" onclick="solver.pressNum('.')">.</button>
+                    <button class="calc_btn opr" onclick="solver.pressOpr('+')">+</button>
+
+                    <button class="calc_btn" onclick="solver.toggle()">+/-</button>
+                    <button class="calc_btn opr back_btn" onclick="solver.back()">&larr;</button>
+                    <button class="calc_btn clr" onclick="solver.clear()">C</button>
+                    <button class="calc_btn calc_equals zero" onclick="solver.solve()">=</button>
+                </div>
+                <div class="funct_output" id="solver_output"></div>
+            </div>
+        </div>
+
+        <!-- BOOTH 03: FACTORING -->
+        <div class="booth">
+            <span class="tag">03</span>
+            <h2>Factoring</h2>
+            <p>Get the Factored Form</p>
+            <button class="play" id="factoringEq_play"
+                onclick="document.getElementById('factoringEq_panel').style.display='flex';
+                    this.style.display='none';
+                    document.getElementById('factoringEq_reset').style.display='block';">
+                Expand
+            </button>
+            <button class="play" id="factoringEq_reset" style="display:none;"
+                onclick="document.getElementById('factoringEq_panel').style.display='none';
+                    this.style.display='none';
+                    document.getElementById('factoringEq_play').style.display='block';
+                    factoringEq.clear();">
+                Collapse
+            </button>
+            <div class="panel" id="factoringEq_panel">
+                <div class="calc_display" id="factoringEq_display">0</div>
+                <div class="calc_grid">
+                    <button class="calc_btn opr" onclick="factoringEq.pressX()">x</button>
+                    <button class="calc_btn opr" onclick="factoringEq.pressSquare()">x<sup><i>n</i></sup></button>
+                    <button class="calc_btn opr" onclick="factoringEq.pressOpnCls('(')">(</button>
+                    <button class="calc_btn opr" onclick="factoringEq.pressOpnCls(')')">)</button>
+
+                    <button class="calc_btn" onclick="factoringEq.pressNum('7')">7</button>
+                    <button class="calc_btn" onclick="factoringEq.pressNum('8')">8</button>
+                    <button class="calc_btn" onclick="factoringEq.pressNum('9')">9</button>
+                    <button class="calc_btn opr" onclick="factoringEq.pressOpr('/')">&divide;</button>
+
+                    <button class="calc_btn" onclick="factoringEq.pressNum('4')">4</button>
+                    <button class="calc_btn" onclick="factoringEq.pressNum('5')">5</button>
+                    <button class="calc_btn" onclick="factoringEq.pressNum('6')">6</button>
+                    <button class="calc_btn opr" onclick="factoringEq.pressOpr('*')">&times;</button>
+
+                    <button class="calc_btn" onclick="factoringEq.pressNum('1')">1</button>
+                    <button class="calc_btn" onclick="factoringEq.pressNum('2')">2</button>
+                    <button class="calc_btn" onclick="factoringEq.pressNum('3')">3</button>
+                    <button class="calc_btn opr" onclick="factoringEq.pressOpr('-')">-</button>
+
+                    <button class="calc_btn zero" onclick="factoringEq.pressNum('0')">0</button>
+                    <button class="calc_btn" onclick="factoringEq.pressNum('.')">.</button>
+                    <button class="calc_btn opr" onclick="factoringEq.pressOpr('+')">+</button>
+
+                    <button class="calc_btn" onclick="factoringEq.toggle()">+/-</button>
+                    <button class="calc_btn opr back_btn" onclick="factoringEq.back()">&larr;</button>
+                    <button class="calc_btn clr" onclick="factoringEq.clear()">C</button>
+                    <button class="calc_btn calc_equals zero" onclick="factoringEq.solve()">=</button>
+                </div>
+                <div class="funct_output" id="factoringEq_output"></div>
+            </div>
+        </div>
+
+        <!-- BOOTH 04: OTHER FUNCTIONS -->
+        <div class="booth funct_wide">
+            <span class="tag">04</span>
+            <h2>More Functions</h2>
+            <p>Volume, Sorting, and Integer Manipulation</p>
+
+            <button class="play" id="other_play"
+                onclick="document.getElementById('other_panel').style.display='flex';
+                    this.style.display='none';
+                    document.getElementById('other_reset').style.display='block';">
+                Expand
+            </button>
+            <button class="play" id="other_reset" style="display:none;"
+                onclick="document.getElementById('other_panel').style.display='none';
+                    document.getElementById('sphere_panel').style.display='none';
+                    document.getElementById('lowest_panel').style.display='none';
+                    document.getElementById('sort_panel').style.display='none';
+                    document.getElementById('fib_panel').style.display='none';
+                    document.getElementById('factorial_panel').style.display='none';
+                    this.style.display='none';
+                    document.getElementById('other_play').style.display='block';">
+                Collapse
+            </button>
+
+            <!-- Palette -->
+            <div class="panel" id="other_panel">
+                <div class="btn_row" style="flex-wrap:wrap; gap:10px;">
+                    <button style="color:#1e1f22; background-color:#a89b6e;" class="action" onclick="
+                        document.getElementById('other_panel').style.display='none';
+                        document.getElementById('sphere_panel').style.display='flex';">
+                        Sphere Volume
+                    </button>
+                    <button style="color:#1e1f22; background-color:#a89b6e;" class="action" onclick="
+                        document.getElementById('other_panel').style.display='none';
+                        document.getElementById('lowest_panel').style.display='flex';">
+                        Lowest / Range
+                    </button>
+                    <button style="color:#1e1f22; background-color:#a89b6e;" class="action" onclick="
+                        document.getElementById('other_panel').style.display='none';
+                        document.getElementById('sort_panel').style.display='flex';">
+                        Bubble Sort
+                    </button>
+                    <button style="color:#1e1f22; background-color:#a89b6e;" class="action" onclick="
+                        document.getElementById('other_panel').style.display='none';
+                        document.getElementById('fib_panel').style.display='flex';">
+                        Fibonacci
+                    </button>
+                    <button style="color:#1e1f22; background-color:#a89b6e;" class="action" onclick="
+                        document.getElementById('other_panel').style.display='none';
+                        document.getElementById('factorial_panel').style.display='flex';">
+                        Factorial
+                    </button>
+                </div>
+            </div>
+
+            <!-- SPHERE -->
+            <div class="panel" id="sphere_panel">
+                <button class="action" style="align-self:flex-start;" onclick="
+                    document.getElementById('sphere_panel').style.display='none';
+                    resetPanel('sphere_output', 'sphere_r');
+                    document.getElementById('other_panel').style.display='flex';">
+                    &larr; Back
+                </button>
+                <input class="funct_input" id="sphere_r" type="number" placeholder="Radius">
+                <div class="btn_row">
+                    <button class="action" onclick="calculateSphere()">Calculate</button>
+                </div>
+                <div class="funct_output" id="sphere_output"></div>
+            </div>
+
+            <!-- LOWEST / RANGE -->
+            <div class="panel" id="lowest_panel">
+                <button class="action" style="align-self:flex-start;" onclick="
+                    document.getElementById('lowest_panel').style.display='none';
+                    resetLowest();
+                    document.getElementById('other_panel').style.display='flex';">
+                    &larr; Back
+                </button>
+                <input class="funct_input" id="lowest_input" type="number" placeholder="Enter a Number">
+                <div class="btn_row">
+                    <button class="action" onclick="lowestAdd()">Add</button>
+                    <button class="action" onclick="lowestDone()">Lowest</button>
+                    <button class="action" onclick="rangeDone()">Range</button>
+                </div>
+                <div class="funct_output" id="lowest_output"></div>
+            </div>
+
+            <!-- BUBBLE SORT -->
+            <div class="panel" id="sort_panel">
+                <button class="action" style="align-self:flex-start;" onclick="
+                    document.getElementById('sort_panel').style.display='none';
+                    resetSort();
+                    document.getElementById('other_panel').style.display='flex';">
+                    &larr; Back
+                </button>
+                <input class="funct_input" id="sort_input" type="number" placeholder="Enter a Number">
+                <div class="btn_row">
+                    <button class="action" onclick="sortAdd()">Add</button>
+                    <button class="action" onclick="sortDone()">Sort</button>
+                </div>
+                <div class="funct_output" id="sort_output"></div>
+            </div>
+
+            <!-- FIBONACCI -->
+            <div class="panel" id="fib_panel">
+                <button class="action" style="align-self:flex-start;" onclick="
+                    document.getElementById('fib_panel').style.display='none';
+                    resetPanel('fib_output', 'fib_input');
+                    document.getElementById('other_panel').style.display='flex';">
+                    &larr; Back
+                </button>
+                <input class="funct_input" id="fib_input" type="number" placeholder="How Many Terms? (2 to 100)">
+                <div class="btn_row">
+                    <button class="action" onclick="fibonacci()">Generate</button>
+                </div>
+                <div class="funct_output" id="fib_output"></div>
+            </div>
+
+            <!-- FACTORIAL -->
+            <div class="panel" id="factorial_panel">
+                <button class="action" style="align-self:flex-start;" onclick="
+                    document.getElementById('factorial_panel').style.display='none';
+                    resetPanel('factorial_output', 'factorial_input');
+                    document.getElementById('other_panel').style.display='flex';">
+                    &larr; Back
+                </button>
+                <input class="funct_input" id="factorial_input" type="number" placeholder="Enter a non-negative integer (max 20)">
+                <div class="btn_row">
+                    <button class="action" onclick="factorial()">Calculate</button>
+                </div>
+                <div class="funct_output" id="factorial_output"></div>
+            </div>
+        </div>
+            
+        <div class="booth funct_wide">
+            <span class="tag">05</span>
+            <h2>Crack the Combination</h2>
+            <p>Guess the Secret Code.</p>
+
+            <div class="combo_controls">    
+                <button class="play" id="combo_play"
+                    onclick="document.getElementById('combo_panel').style.display='flex';
+                    this.style.display='none';
+                    document.getElementById('combo_info_btn').style.display='block';
+                    document.getElementById('combo_reset').style.display='block';">
+                Play
+                </button>
+                
+                <button class="play" id="combo_info_btn" style="display:none;"
+                    onclick="comboGame.openInfo()">
+                Game Info
+                </button>
+                
+                <button class="play" id="combo_reset" style="display:none;"
+                    onclick="document.getElementById('combo_panel').style.display='none';
+                        this.style.display='none';
+                        document.getElementById('combo_play').style.display='block';
+                        comboGame.reset();">
+                Reset
+                </button>
+            </div>
+
+        <div class="panel" id="combo_panel">
+            <div class="combo_controls">
+                <button class="action" id="combo_easy" onclick="comboGame.setDiff('easy')">Easy</button>
+                <button class="action" id="combo_normal" onclick="comboGame.setDiff('normal')">Normal</button>
+                <button class="action" id="combo_hard" onclick="comboGame.setDiff('hard')">Hard</button>
+            </div>
+
+            <div class="combo_meta" id="combo_meta"></div>
+            <div class="combo_blanks" id="combo_blanks"></div>    
+                    
+            <div class="combo_legend" id="combo_legend">
+                <span><b class="combo_legend_exact">&#x2714;</b>exact</span>
+                <span><b class="combo_legend_low">+</b> too low</span>
+                <span><b class="combo_legend_high">-</b> too high</span>
+                <span><b class="combo_legend_miss">✕</b> off</span>
+            </div>
+            
+            <div class="combo_legend" id="combo_legend_hard">
+                <span><b class="combo_legend_exact">7</b> exact</span>
+                <span><b class="combo_legend_close">#</b> close</span>
+                <span><b class="combo_legend_miss">✕</b> off</span>
+            </div>
+
+            <div class="combo_input_row" id="combo_input_row">
+                <input class="funct_input combo_guess_input" id="combo_input" type="text"
+                    maxlength="6" placeholder="enter digits..." autocomplete="off"
+                    onkeydown="if(event.key==='Enter') comboGame.submit();">
+                <button class="action" onclick="comboGame.submit()">Check</button>
+            </div>
+
+            <div class="funct_output" id="combo_history" style="display:none;"></div>
+            <div class="combo_status" id="combo_status"></div>
+            <div class="combo_again" id="combo_again"></div>
+        </div>
+        </div>
+        <div id="combo_modal_overlay" class="modal_overlay">
+            <div class="modal_box">
+                <button class="modal_close" onclick="comboGame.closeInfo()">&times;</button>
+                <h2 class="modal_title">How to Play</h2>
+                <div class="modal_body">
+                    <p>Enter the correct sequence of numbers within the number of guesses allowed.<br>
+                        on Easy, the player has 6 chances to guess a 4 digit code.<br>
+                        on Normal, there are 4 chances to guess a 5 digit code.<br>
+                        on Hard, there are 3 chances to guess a 6 digit code.<br><br>
+                        With each guess entered, hints are given!<br> 
+                        Yellow means the guess is close. + and - indicate whether the value should be raised or lowered.<br>
+                        <b>Thanks for Playing!<br></b>
+                        <b><i>Enjoy!</i></b> 
+                    </p>
+                </div>
+                <div class="modal_footer">
+                    <button class="action" onclick="comboGame.closeInfo()">Close</button>
+                </div>
+            </div>
+        </div>
+    </section>
+ <div class="banner">
+        <h1>Curiosities and Drives.</h1>
+    </div>
+
+    <section id="hobbies" class="section">
+        <ul class="hobbies">
+            <li><i>Outside of technological endeavors</i>, I am an <b>artist</b>! You'll find some of my artwork on <a href="https://www.instagram.com/a_g_reynolds">Instagram.</a><br></li>
+            <li>I love to <b>write</b>! You can read some of my written work on <a href="https://www.medium.com/@a-g-reynolds">Medium!</a></li>
+            <li>I make informational YouTube videos. Visit <a href="https://www.youtube.com/@TheOverthinkingStudent">my channel!</a></li>
+        </ul>
+    
+    </section>
+
+    <h1 class="banner" style="margin-left: 0;">Contact.</h1>
+
+    <section id="contact" class="section" style="text-align: center;">
+        <hr style="border: 0; border-top: 1px solid #5d5d61; margin-bottom: 40px;">
+        <p>Interested in collaborating? Fill out the form below, or find me on <a href="https://www.github.com/a-g-reynolds">GitHub</a> and <a href="https://www.linkedin.com/in/a-g-reynolds">LinkedIn</a></p>
+
+        <form class="contact_form" id="contact_form" onsubmit="submitContact(event)" novalidate>
+            <div class="contact_row">
+                <div class="contact_field">
+                    <label for="contact_first">First Name</label>
+                    <input class="funct_input" id="contact_first" name="first_name" type="text" placeholder="First Name" required>
+                </div>
+                <div class="contact_field">
+                    <label for="contact_last">Last Name</label>
+                    <input class="funct_input" id="contact_last" name="last_name" type="text" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="contact_field">
+                <label for="contact_email">Email</label>
+                <input class="funct_input" id="contact_email" name="from_email" type="email" placeholder="example@email.com" required>
+            </div>
+            <div class="contact_field">
+                <label for="contact_message">Message</label>
+                <textarea class="funct_input contact_textarea" id="contact_message" name="message" placeholder="Type Your Message Here..." rows="5" required></textarea>
+            </div>
+            <div id="contact_status"></div>
+            <div class="contact_btn_row">
+                <button class="contact_submit" type="submit">Send</button>
+                <button class="contact_reset" type="reset" onclick="resetContact()">Reset</button>
+            </div>
+        </form>
+
+        <div id="contactForm"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 A.G. Reynolds</p>
+    </footer>
+
+</body>
+</html>
